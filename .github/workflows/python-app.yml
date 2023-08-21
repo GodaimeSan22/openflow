@@ -32,7 +32,7 @@ jobs:
           pip install -r requirements.txt  # Якщо у вас є файл залежностей
 
       - name: Run Data Base
-        run: db
+        run: python db.py
 
       - name: Run Unit Tests
         run: pytest
