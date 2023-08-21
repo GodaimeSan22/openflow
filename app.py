@@ -95,3 +95,5 @@ if __name__ == "__main__":
 #Hello 
 def hello():
     print('Hello')
+def hello():
+    print('Hello')
