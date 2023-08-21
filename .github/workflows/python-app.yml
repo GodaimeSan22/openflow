@@ -41,6 +41,4 @@ jobs:
         run: |
           git config --global user.name "Vasya Rusyn"
           git config --global user.email "vasyarusynn@email.com"
-          git add .
-          git commit -m "CI: Update project code"
-          git push
+
