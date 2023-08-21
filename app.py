@@ -93,3 +93,5 @@ if __name__ == "__main__":
     app.run(host=args.host, port=args.port, debug=True)
 #Hello vasya
 #Hello 
+def hello():
+    print('Hello')
