@@ -31,7 +31,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Якщо у вас є файл залежностей
 
-      -- name: Run Unit Tests
+      - name: Run Unit Tests
         run: pytest
           -
       - name: Push Changes
