@@ -1,0 +1,46 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python CI Rusyn
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Оберіть операційну систему
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Вкажіть потрібну версію Python
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Якщо у вас є файл залежностей
+
+      - name: Run Data Base
+        run: python db.py
+
+      - name: Run Unit Tests
+        run: pytest
+        
+      - name: Push Changes
+        run: |
+          git config --global user.name "Vasya Rusyn"
+          git config --global user.email "vasyarusynn@email.com"
+          git add .
+          git commit -m "CI: Update project code"
+          git push
