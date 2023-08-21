@@ -31,6 +31,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Якщо у вас є файл залежностей
 
+      - name: Run Data Base
+        run: db.py
+
       - name: Run Unit Tests
         run: pytest
         
